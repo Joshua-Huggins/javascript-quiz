@@ -5,58 +5,74 @@
     <!--Meta Tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="#placeholder">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style.css">
     <title>Javascript Quiz</title>
+</head>
+
 </head>
 
 <body>
     <header>
-        <!--Nav bar stuff-->
-        <nav class="nav">
-            <a class="navBar" href="./index.html"></a>
-            <button class="Button">Score Tablet</button>
-        </nav>
+        <div class="scores">
+            <a id="highscores-link">View high scores</a>
+        </div>
+        <div id="timer" class="timer">
+            Time: 60
+        </div>
     </header>
 
-    <main>
-        <div class="jumbotron-catalog">
-            <div class="container">
-                <h1 class="display-5">Catalog</h1>
+    <!--"Homepage" Maybe look to add different buttons to start different sets of questions-->
+    <section id="start-container" class="start-quiz">
+        <h1>Welcome to JavaScript Quiz Challenge</h1>
+        <p>
+            You have one minute to try to get the highest score by answering a
+            series of JavaScript questions. Wrong answers will penalize your
+            time by five seconds. Your total score will be your time after you
+            answer the last question. Click start when you are ready.
+        </p>
+        <div class="controls">
+            <button id="start-btn" class="start-btn">Start Quiz</button>
+        </div>
+    </section>
+
+    <section id="question-container" class="hide">
+        <h1 id="question">Question</h1>
+        <div id="answer-buttons" class="btn-grid">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
+        </div>
+        <h2 id="check-answer" class="correct-wrong hide"></h2>
+        <div class="controls">
+            <button id="next-btn" class="next-btn hide">Next</button>
+        </div>
+    </section>
+
+    <section id="score-container" class="hide">
+        <form id="submit-form">
+            <h3 id="your-score"></h3>
+            <label id="initials-label">Enter your initials to save the score:</label>
+            <input type="text" id="initials-field" maxlength="3" placeholder="Enter your initials" />
+            <button id="submit-btn">Submit</button>
+        </form>
+    </section>
+
+    <section id="highscores" class="highscores-container hide">
+        <div id="high-scores">
+            <h1 class="centered">Leaderboard</h1>
+            <div id="highscore" class="highscore highscore-list">
+            </div>
+            <div class="controls">
+                <button id="restart-btn">Restart</button>
+                <button id="clear-btn">Reset Scores</button>
             </div>
         </div>
+        
+    </section>
 
-        <!--Start with Java add more if time allows-->
-        <div class="languages">
-            <div class="container">
-                <h4>Languages</h4>
-                <div class="card-language">
-                    <div class="card-body">
-                        <span class="lang-icon"><i class="fab-css3"></i></span>
-                        <p class="lang-java">Learning Javascript</p>
-                    </div>  
-                </div>
-            </div>
-        </div>
-
-        <div class="quiz-cards">
-            <div class="container-quiz"></div>
-        </div>
-
-        <div class="container-justify-content">
-            <button type="button" class="Score">Score Table</button>
-            <div class="time">Time</div>
-        </div>
-        <div class="container-quiz"></div>
-        <div class="score-card"></div>
-        <div class="score-table"></div>
-    </main>
-
-    <footer>
-        <p></p>
-    </footer>
-
-    <script> src="#placeholderjs"</script>
-
-
+    <script src="./assets/quiz.js"></script>
+    <script src="./assets/questions.js"></script>
 </body>
 </html>
