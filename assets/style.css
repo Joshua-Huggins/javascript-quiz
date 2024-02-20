@@ -1,246 +1,148 @@
-nav {
-    background-color: #002428;
+/* Normalize styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.jumbotron-catalot {
-    background-size: cover;
-    background-color: #fff;
-    height: 250px;
-    margin-bottom: 15px;
-    padding: 8px 15px;
+:root {
+  --color-1: #e70dca;
+  --color-2: #b168a5;
+  --color-3: #aaaaaa;
+  --white-text: #ffffff;
+  --correct-color: #6b8e23;
 }
 
-.intro {
-    border: none;
-    border-radius: 0;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  width: 60%;
+  margin: 0 auto;
 }
 
-.intro .cardheader:first-child {
-    /* gives the card a little indent */
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+a {
+  text-decoration: none;
 }
 
-.intro .cardheader {
-    background-color: #7DE38D;
-    color: #fff;
-    padding: 10px 10px 10px;
+.centered {
+  text-align: center;
 }
 
-.intro .cardheader img {
-    width: 150px;
-    float: right;
-    margin-right: 10px;
+/* Header */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 25px 0;
 }
 
-.intro .cardbody p{
-    font-size: 14px;
-    line-height: 1.25;
+.scores a,
+.timer {
+  font-size: 20px;
 }
 
-.intro .cardbody {
-    border-left: 1px solid rgba(0, 36, 43, .3);
-    border-right: 1px solid rgba(0, 36, 43, .3);
-    padding: 24px 16px 40px 16px;
+.scores a {
+  color: var(--color-2);
+  cursor: pointer;
 }
 
-.intro .cardfooter:last-child {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+.scores a:hover {
+  color: var(--color-3);
 }
 
-.intro .cardfooter {
-    background-color: #00242b;
-    color: #fff;
-    border-bottom: 1px solid rgba(0,0,0,125);
-    letter-spacing: 1px;
+/* Start Quiz */
+.start-quiz {
+  text-align: center;
 }
 
-.intro .card-footer p {
-    display: inline-block;
-    font-weight: 600;
+h1 {
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: var(--color-3);
+  border-top: 1px solid var(--color-3);
+  margin: 20px 0;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Buttons */
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  width: auto;
+  overflow: visible;
+  padding: 10px;
+  background-color: var(--color-1);
+  border-radius: 10px;
+  font-size: large;
+  margin: 10px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-2);
+}
+
+.hide {
+  display: none;
+}
+
+.btn.correct {
+  background-color: var(--correct-color);
+}
+
+.btn.wrong {
+  background-color: var(--color-3);
+}
+
+/* Wrapper for buttons */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+/* Enter your initial */
+input[type="text"] {
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid var(--color-3);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Highscores Page */
+.highscore {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.name-div,
+.score-div {
+  flex: 1 35%;
+  padding: 10px 0;
+  border: 1px solid var(--correct-color);
+}
+
+/*** MEDIA QUERY FOR MOBILE PHONES AND SMALLER ***/
+/* this will be applied on any screen smaller than 575px */
+/* once live on github test on mobile */
+@media screen and (max-width: 575px) {
+  .btn-grid {
+    grid-template-columns: repeat(1, auto);
+    gap: 0;
     margin: 0;
-    padding-left: 5px;
-    padding-top: 2px;
-    text-transform: uppercase;
+  }
 }
-
-.intro .card-footer p:hover {
-    cursor: pointer;
-}
-
-.catalog h1 {
-    color: #00242b;
-}
-
-.languages h4 {
-    color: #00242b;
-    margin-bottom: 24px;
-}
-
-.languages {
-    box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.1);
-    background-color: #00242b;
-    color: #7DE38D;
-    margin-top: 12px;
-    z-index: 10;
-}
-
-.languages .card-body {
-    padding: 10px;
-}
-.lang_icon {
-    float: left;
-    padding: 0.25rem 1.5rem 0.25rem 0.5rem;
-  }
-  
-  .lang_def {
-    margin: 0;
-    padding-top: 0.5rem;
-  }
-  
-  .fa-html5,
-  .fa-css3-alt,
-  .fa-js {
-    font-size: 2rem;
-  }
-  
-  .language .card-body:hover {
-    box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, .25);
-    cursor: pointer;
-  }
-  
-  .outro .container {
-    height: 200px;
-  }
-  
-  .outro .background {
-    display: block;
-    height: 300px;
-    position: relative;
-    top: -150px;
-    left: 50px;
-    width: 100%;
-    margin: 0 auto;
-    z-index: -1;
-  }
-  
-  .scores_nav {
-    border-color: #7DE38D;
-    color: #fff;
-  }
-  
-  .scores,
-  .time {
-    color: #fff;
-    display: none;
-  }
-  
-  .quiz_card {
-    border: none;
-    border-radius: 0;
-  
-    background-color: #00242B;
-  }
-  
-  .quiz_card ul li {
-    background-color: #00242B;
-    border: 1px solid #7DE38D;
-  }
-  
-  .quiz_card ul li:hover {
-    cursor: pointer;
-  }
-  
-  .quiz_card .card-header+.list-group .list-group-item:first-child {
-    border-top: 1px solid #7DE38D;
-  }
-  
-  .quiz_card.card>.list-group:last-child .list-group-item:last-child {
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-  
-  .quiz_card .list-group-item:first-child {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-  }
-  
-  .score.card {
-    border-color: #fff;
-    background-color: #00202b;
-  }
-  
-  .score.card .card-header {
-    border-bottom-color: #fff;
-  }
-  
-  .result {
-    color: #7DE38D;
-    font-size: 3.5rem;
-    text-align: center;
-  }
-  
-  .score.card ul {
-    width: 100%;
-  }
-  
-  .score.card ul li {
-    border: 0;
-    color: #fff;
-    background-color: #00202b;
-    width: 33%;
-    text-align: right;
-  }
-  
-  .score_table {
-    padding-bottom: 5rem;
-  }
-  
-  .score_table .card .card-header+.list-group .list-group-item:first-child {
-    border-top: 1px solid #7DE38D;
-  }
-  
-  .score_table .card>.list-group:last-child .list-group-item:last-child {
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0;
-      border-bottom: 1px solid #7DE38D;
-  }
-  
-  .score_table .card {
-    border: 0;
-    background-color: #00242B;
-  }
-  
-  .score_table .card h3 {
-    color: #fff;
-  }
-  
-  .score_table .card ul li {
-    background-color: #00242B;
-    border: 1px solid #7DE38D;
-    color: #fff;
-  }
-  
-  .player_score {
-    float: right;
-  }
-  
-  footer {
-    background-color: #00242B;
-    color: #7DE38D;
-    
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    /* top: -10px; */
-  
-    text-align: center;
-  }
-  
-  footer p {
-    font-size: 0.75rem;
-    margin: 0;
-    padding: 0.5rem 0;
-  }
