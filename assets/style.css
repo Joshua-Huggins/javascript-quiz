@@ -10,7 +10,7 @@
   --color-2: #b168a5;
   --color-3: #aaaaaa;
   --white-text: #ffffff;
-  --correct-color: #6b8e23;
+  --correct-color: #e91a1a;
 }
 
 body {
@@ -55,8 +55,10 @@ header {
   text-align: center;
 }
 
+/* This is the question being displayed */
 h1 {
   margin-bottom: 10px;
+  text-align: center;
 }
 
 h2 {
@@ -70,9 +72,9 @@ h2 {
 /* Buttons */
 .btn-grid {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(1, auto);
   gap: 10px;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 button {
